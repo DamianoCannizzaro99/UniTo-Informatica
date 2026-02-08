@@ -1,0 +1,101 @@
+{{>search}}
+
+{{#if filterSummary}}
+<div class="container mt-3">
+    <div class="alert alert-info" role="alert">
+        <i class="fas fa-filter me-2"></i>
+        <strong>Active Filters:</strong> 
+        {{#each filterSummary}}
+            <span class="badge bg-secondary me-1">{{this}}</span>
+        {{/each}}
+    </div>
+</div>
+{{/if}}
+
+{{>VerticalCard}}
+
+{{#if pagination}}
+<div class="container mt-4">
+    <nav aria-label="Search results pagination">
+        <ul class="pagination justify-content-center">
+            <!-- Previous Page -->
+            {{#if pagination.hasPrevPage}}
+                <li class="page-item">
+                    <a class="page-link" href="/FilmSearched?{{buildQueryString searchParams pagination.prevPage}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {{else}}
+                <li class="page-item disabled">
+                    <span class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </span>
+                </li>
+            {{/if}}
+            
+            {{#if pagination.pageRange}}
+                <!-- First Page -->
+                {{#if pagination.pageRange.showFirstPage}}
+                    <li class="page-item">
+                        <a class="page-link" href="/FilmSearched?{{buildQueryString searchParams 1}}">1</a>
+                    </li>
+                    {{#if pagination.pageRange.showStartEllipsis}}
+                        <li class="page-item disabled">
+                            <span class="page-link">...</span>
+                        </li>
+                    {{/if}}
+                {{/if}}
+                
+                <!-- Page Numbers -->
+                {{#each pagination.pageRange.pages}}
+                    {{#if (eq this ../pagination.currentPage)}}
+                        <li class="page-item active">
+                            <span class="page-link">{{this}}</span>
+                        </li>
+                    {{else}}
+                        <li class="page-item">
+                            <a class="page-link" href="/FilmSearched?{{buildQueryString ../searchParams this}}">{{this}}</a>
+                        </li>
+                    {{/if}}
+                {{/each}}
+                
+                <!-- Last Page -->
+                {{#if pagination.pageRange.showLastPage}}
+                    {{#if pagination.pageRange.showEndEllipsis}}
+                        <li class="page-item disabled">
+                            <span class="page-link">...</span>
+                        </li>
+                    {{/if}}
+                    <li class="page-item">
+                        <a class="page-link" href="/FilmSearched?{{buildQueryString searchParams pagination.pageRange.totalPages}}">{{pagination.pageRange.totalPages}}</a>
+                    </li>
+                {{/if}}
+            {{else}}
+                <!-- Fallback: Current Page Info -->
+                <li class="page-item active">
+                    <span class="page-link">
+                        Page {{pagination.currentPage}}
+                    </span>
+                </li>
+            {{/if}}
+            
+            <!-- Next Page -->
+            {{#if pagination.hasNextPage}}
+                <li class="page-item">
+                    <a class="page-link" href="/FilmSearched?{{buildQueryString searchParams pagination.nextPage}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            {{else}}
+                <li class="page-item disabled">
+                    <span class="page-link" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </span>
+                </li>
+            {{/if}}
+        </ul>
+    </nav>
+</div>
+{{/if}}
+
+<script src = Js/index_FilmSearched.js ></script>

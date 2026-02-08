@@ -1,0 +1,93 @@
+
+<h2>Ultime uscite</h2>
+{{>carousel}}
+
+<h2> I Titoli più apprezzati nel 2024</h2>
+
+{{>VerticalCard}}
+
+{{#if pagination}}
+<div class="container mt-4">
+    <nav aria-label="Top rated movies pagination">
+        <ul class="pagination justify-content-center">
+            <!-- Previous Page -->
+            {{#if pagination.hasPrevPage}}
+                <li class="page-item">
+                    <a class="page-link" href="/?{{buildQueryString searchParams pagination.prevPage}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {{else}}
+                <li class="page-item disabled">
+                    <span class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </span>
+                </li>
+            {{/if}}
+            
+            {{#if pagination.pageRange}}
+                <!-- First Page -->
+                {{#if pagination.pageRange.showFirstPage}}
+                    <li class="page-item">
+                        <a class="page-link" href="/?{{buildQueryString searchParams 1}}">1</a>
+                    </li>
+                    {{#if pagination.pageRange.showStartEllipsis}}
+                        <li class="page-item disabled">
+                            <span class="page-link">...</span>
+                        </li>
+                    {{/if}}
+                {{/if}}
+                
+                <!-- Page Numbers -->
+                {{#each pagination.pageRange.pages}}
+                    {{#if (eq this ../pagination.currentPage)}}
+                        <li class="page-item active">
+                            <span class="page-link">{{this}}</span>
+                        </li>
+                    {{else}}
+                        <li class="page-item">
+                            <a class="page-link" href="/?{{buildQueryString ../searchParams this}}">{{this}}</a>
+                        </li>
+                    {{/if}}
+                {{/each}}
+                
+                <!-- Last Page -->
+                {{#if pagination.pageRange.showLastPage}}
+                    {{#if pagination.pageRange.showEndEllipsis}}
+                        <li class="page-item disabled">
+                            <span class="page-link">...</span>
+                        </li>
+                    {{/if}}
+                    <li class="page-item">
+                        <a class="page-link" href="/?{{buildQueryString searchParams pagination.pageRange.totalPages}}">{{pagination.pageRange.totalPages}}</a>
+                    </li>
+                {{/if}}
+            {{else}}
+                <!-- Fallback: Current Page Info -->
+                <li class="page-item active">
+                    <span class="page-link">
+                        Page {{pagination.currentPage}}
+                    </span>
+                </li>
+            {{/if}}
+            
+            <!-- Next Page -->
+            {{#if pagination.hasNextPage}}
+                <li class="page-item">
+                    <a class="page-link" href="/?{{buildQueryString searchParams pagination.nextPage}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            {{else}}
+                <li class="page-item disabled">
+                    <span class="page-link" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </span>
+                </li>
+            {{/if}}
+        </ul>
+    </nav>
+</div>
+{{/if}}
+
+<script src="Js/index_HomePage.js"></script>
