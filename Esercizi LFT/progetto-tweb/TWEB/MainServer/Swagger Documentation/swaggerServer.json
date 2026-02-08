@@ -1,0 +1,146 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Oscar & Movie API",
+    "description": "API per la gestione dei dati sugli Oscar e dei film",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8081",
+      "description": "Server Movie API"
+    },
+    {
+      "url": "http://localhost:3001",
+      "description": "Server Oscar API"
+    }
+  ],
+  "paths": {
+    "/movies/id/{movieId}": {
+      "get": {
+        "summary": "Ottiene un film per ID",
+        "parameters": [
+          {
+            "name": "movieId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Film trovato" }
+        }
+      }
+    },
+    "/countries/id/{movieId}": {
+      "get": {
+        "summary": "Ottiene i paesi per ID del film",
+        "parameters": [
+          {
+            "name": "movieId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Paesi trovati" }
+        }
+      }
+    },
+    "/crews/id/{movieId}": {
+      "get": {
+        "summary": "Ottiene la crew per ID del film",
+        "parameters": [
+          {
+            "name": "movieId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Crew trovata" }
+        }
+      }
+    },
+    "/themes/id/{movieId}": {
+      "get": {
+        "summary": "Ottiene i temi per ID del film",
+        "parameters": [
+          {
+            "name": "movieId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Temi trovati" }
+        }
+      }
+    },
+    "/movies/search": {
+      "get": {
+        "summary": "Ricerca film",
+        "parameters": [
+          {
+            "name": "queryString",
+            "in": "query",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Risultati della ricerca" }
+        }
+      }
+    },
+    "/movies/TopRate": {
+      "get": {
+        "summary": "Ottiene i film più votati",
+        "responses": {
+          "200": { "description": "Lista di film più votati" }
+        }
+      }
+    },
+    "/movies/latest-releases": {
+      "get": {
+        "summary": "Ottiene le ultime uscite",
+        "responses": {
+          "200": { "description": "Lista delle ultime uscite" }
+        }
+      }
+    },
+    "/genres/getAllGenres": {
+      "get": {
+        "summary": "Ottiene tutti i generi",
+        "responses": {
+          "200": { "description": "Lista dei generi" }
+        }
+      }
+    },
+    "/api/20dataOscar": {
+      "get": {
+        "summary": "Ottiene i dati Oscar",
+        "responses": {
+          "200": { "description": "Dati Oscar trovati" }
+        }
+      }
+    },
+    "/api/findOscar": {
+      "get": {
+        "summary": "Cerca un film vincitore di Oscar",
+        "parameters": [
+          {
+            "name": "film",
+            "in": "query",
+            "schema": { "type": "string" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Film Oscar trovato" }
+        }
+      }
+    }
+  }
+}

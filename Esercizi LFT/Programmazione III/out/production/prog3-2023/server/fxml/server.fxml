@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="378.0" prefWidth="568.0" xmlns="http://javafx.com/javafx/20" xmlns:fx="http://javafx.com/fxml/1" fx:controller="server.ServerController">
+     <children>
+       <BorderPane VBox.vgrow="ALWAYS">
+           <top>
+                     <HBox alignment="CENTER_LEFT" prefHeight="86.0" prefWidth="722.0" BorderPane.alignment="CENTER">
+                        <children>
+                           <ImageView fx:id="imgIcon" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                              <image>
+                                 <Image url="@../resources/main/images/logo.png" />
+                              </image>
+                           </ImageView>
+                           <Label fx:id="accountLbl" prefHeight="54.0" prefWidth="215.0" text="Server">
+                              <HBox.margin>
+                                 <Insets left="20.0" />
+                              </HBox.margin>
+                  <font>
+                     <Font size="24.0" />
+                  </font>
+                           </Label>
+                        </children>
+                        <padding>
+                           <Insets bottom="12.0" left="12.0" right="12.0" top="12.0" />
+                        </padding>
+                     </HBox>
+           </top>
+           <center>
+               <GridPane alignment="CENTER" prefHeight="600.0" prefWidth="805.0" BorderPane.alignment="CENTER">
+                    <ListView fx:id="listLog" maxHeight="500.0" maxWidth="505.0" prefHeight="500.0" prefWidth="505.0" style="-fx-font-family: Dubai; -fx-font-size: 15;" BorderPane.alignment="CENTER">
+                        <BorderPane.margin>
+                            <Insets left="20.0" right="20.0" />
+                        </BorderPane.margin>
+                   </ListView>
+               </GridPane>
+           </center>
+           <bottom>
+               <GridPane alignment="CENTER" prefHeight="37.0" prefWidth="568.0" BorderPane.alignment="CENTER">
+                       <columnConstraints>
+               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                       </columnConstraints>
+                       <rowConstraints>
+                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                       </rowConstraints>
+
+                  <StackPane prefHeight="34.0" prefWidth="189.0" GridPane.columnIndex="1">
+                     <children>
+                        <Button fx:id="connectBtn" mnemonicParsing="false" onMouseClicked="#onConnectButtonClick" text="Connect" />
+                        <Button fx:id="disconnectBtn" mnemonicParsing="false" onMouseClicked="#onDisconnectButtonClick" text="Disconnect" />
+                     </children>
+                  </StackPane>
+
+                     </GridPane>
+           </bottom>
+       </BorderPane>
+   </children>
+</VBox>

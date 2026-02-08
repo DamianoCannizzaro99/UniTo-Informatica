@@ -1,0 +1,129 @@
+{{>search}}
+
+<style>
+    .actor-card {
+        border: none;
+        border-radius: 15px;
+    }
+    
+    .actor-info {
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+</style>
+
+<div class="container mt-4">
+    <div class="card actor-card mb-4 shadow" style="max-width: 100%; overflow: hidden;">
+        <div class="row g-0">
+            <div class="col-md-3">
+                <div class="position-relative" style="height: 300px; overflow: hidden;">
+                    <img id="actorImage" src="/images/placeholder-actor.svg" alt="{{actorName}}"
+                         class="img-fluid h-100 w-100 actor-image" 
+                         style="object-fit: cover; object-position: center; display: none; border-radius: 15px 0 0 15px;">
+                    <div id="imageLoader" class="d-flex align-items-center justify-content-center h-100 bg-light">
+                        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 actor-info">
+                <div class="card-body h-100 d-flex align-items-center" style="min-height: 300px;">
+                    <div>
+                        <h1 class="card-title mb-3">{{actorName}}</h1>
+                        <p class="text-muted mb-0 fs-4">
+                            <i class="fas fa-film me-2"></i>
+                            Ha partecipato nei seguenti film:
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{>VerticalCard}}
+
+{{#if pagination}}
+<div class="container mt-4">
+    <nav aria-label="Actor movies pagination">
+        <ul class="pagination justify-content-center">
+            <!-- Previous Page -->
+            {{#if pagination.hasPrevPage}}
+                <li class="page-item">
+                    <a class="page-link" href="/Actors?{{buildQueryString searchParams pagination.prevPage}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {{else}}
+                <li class="page-item disabled">
+                    <span class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </span>
+                </li>
+            {{/if}}
+            
+            {{#if pagination.pageRange}}
+                <!-- First Page -->
+                {{#if pagination.pageRange.showFirstPage}}
+                    <li class="page-item">
+                        <a class="page-link" href="/Actors?{{buildQueryString searchParams 1}}">1</a>
+                    </li>
+                    {{#if pagination.pageRange.showStartEllipsis}}
+                        <li class="page-item disabled">
+                            <span class="page-link">...</span>
+                        </li>
+                    {{/if}}
+                {{/if}}
+                
+                <!-- Page Numbers -->
+                {{#each pagination.pageRange.pages}}
+                    {{#if (eq this ../pagination.currentPage)}}
+                        <li class="page-item active">
+                            <span class="page-link">{{this}}</span>
+                        </li>
+                    {{else}}
+                        <li class="page-item">
+                            <a class="page-link" href="/Actors?{{buildQueryString ../searchParams this}}">{{this}}</a>
+                        </li>
+                    {{/if}}
+                {{/each}}
+                
+                <!-- Last Page -->
+                {{#if pagination.pageRange.showLastPage}}
+                    {{#if pagination.pageRange.showEndEllipsis}}
+                        <li class="page-item disabled">
+                            <span class="page-link">...</span>
+                        </li>
+                    {{/if}}
+                    <li class="page-item">
+                        <a class="page-link" href="/Actors?{{buildQueryString searchParams pagination.pageRange.totalPages}}">{{pagination.pageRange.totalPages}}</a>
+                    </li>
+                {{/if}}
+            {{else}}
+                <!-- Fallback: Current Page Info -->
+                <li class="page-item active">
+                    <span class="page-link">
+                        Page {{pagination.currentPage}}
+                    </span>
+                </li>
+            {{/if}}
+            
+            <!-- Next Page -->
+            {{#if pagination.hasNextPage}}
+                <li class="page-item">
+                    <a class="page-link" href="/Actors?{{buildQueryString searchParams pagination.nextPage}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            {{else}}
+                <li class="page-item disabled">
+                    <span class="page-link" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </span>
+                </li>
+            {{/if}}
+        </ul>
+    </nav>
+</div>
+{{/if}}
+
+<script src="Js/index_Actors.js"></script>

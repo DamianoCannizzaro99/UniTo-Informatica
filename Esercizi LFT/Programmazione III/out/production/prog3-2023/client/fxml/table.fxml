@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0"
+           prefWidth="532.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="client.controller.TableController">
+    <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0">
+        <columns>
+            <TableColumn fx:id="mittenteColumn" editable="false" prefWidth="179" sortable="false"
+                         style="-fx-font-family: Dubai Bold; -fx-font-size: 15;" text="Mittente"/>
+            <TableColumn fx:id="argomentoColumn" editable="false" prefWidth="230.0" sortable="false"
+                         style="-fx-font-family: Dubai Bold; -fx-font-size: 15;" text="Oggetto"/>
+            <TableColumn fx:id="dataColumn" editable="false" prefWidth="122"
+                         style="-fx-font-family: Dubai Bold; -fx-font-size: 15;" text="Data"/>
+        </columns>
+    </TableView>
+</StackPane>

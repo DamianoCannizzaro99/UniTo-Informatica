@@ -1,0 +1,32 @@
+<div class="container mt-4 search-container">
+    <!-- Oscar search form -->
+    <div class="oscar-search-form">
+        <h5 class="mb-3"><i class="fas fa-search me-2"></i>Search Oscar Awards</h5>
+        <div class="row g-3">
+            <div class="col-md-6">
+                <label for="searchTitle" class="form-label">Film Title</label>
+                <input type="text" class="form-control" placeholder="Enter film title..." id="searchTitle">
+            </div>
+            <div class="col-md-4">
+                <label for="searchYear" class="form-label">Ceremony Year</label>
+                <select class="form-select" id="searchYear">
+                    <option value="">All Years</option>
+                    <!-- Years will be populated dynamically -->
+                </select>
+            </div>
+            <div class="col-md-2 d-flex align-items-end">
+                <button class="btn btn-primary w-100" type="button" onclick="searchOscars()" id="searchButton">
+                    <i class="fas fa-filter me-1"></i> Filter
+                </button>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12">
+                <button class="btn btn-outline-secondary btn-sm" type="button" onclick="clearSearch()">
+                    <i class="fas fa-times me-1"></i> Show All Years
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="Js/index_searchOscars.js"></script>

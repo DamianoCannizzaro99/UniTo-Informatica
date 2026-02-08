@@ -1,0 +1,56 @@
+<div class="container mt-4 search-container">
+    <!-- Barra di ricerca -->
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Cerca..." id ="searchTitle">
+        <button class="btn btn-outline-secondary" type="button" id="loadMoreButton" >
+            <img class="filter" src="img/Filtro.png" alt="Filtro" onclick="toggleFilters()">
+        </button>
+        <button class="btn btn-outline-secondary" type="button" onclick="searchMovies()" id="searchButton">
+            <img class="img-search" src="img/Search.png" alt="Cerca">
+        </button>
+    </div>
+
+    <!-- Barra filtri (inizialmente nascosta) -->
+    <div class="filters" id="filters">
+        <div class="row g-2">
+           <!-- <div class="col-md">
+                <input type="text" class="form-control" placeholder="Titolo" id="searchTitle">
+            </div>-->
+            <div class="col-md">
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle w-100 text-start" type="button" id="genreDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <span id="selectedGenresText">Tutti i generi</span>
+                    </button>
+                    <ul class="dropdown-menu w-100 genre-dropdown-menu" aria-labelledby="genreDropdown" id="genreDropdownMenu">
+                        <li>
+                            <div class="px-3 py-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="allGenres" checked>
+                                    <label class="form-check-label" for="allGenres">
+                                        Tutti i generi
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
+                        <li><hr class="dropdown-divider"></li>
+                        <!-- Genre options will be populated by JavaScript -->
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md">
+                <input type="number" class="form-control" placeholder="Durata (min)" id="searchDuration">
+            </div>
+            <div class="col-md">
+                <input type="number" class="form-control" placeholder="Valutazione (1-5)" min="1" max="5" id="searchRating">
+            </div>
+            <div class="col-md">
+                <input type="number" class="form-control" placeholder="Anno di produzione" id="searchYear">
+            </div>
+            <div class="col-md-auto">
+                <button class="btn btn-primary" onclick="searchMovies()">Filtra</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="Js/index_Search.js"></script>
+

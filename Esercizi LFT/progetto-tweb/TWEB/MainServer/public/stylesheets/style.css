@@ -1,0 +1,354 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+/*AGGIUNTO DA IRE PER LA NAVBAR*/
+/* Colore blu scuro della navbar */
+.bg-dark-blue {
+  background-color: #051233 !important; /* Colore blu scuro */
+}
+
+/* Colore blu chiaro per le voci di menu */
+.text-light-blue {
+  color: #ffffff !important; /* Colore blu chiaro */
+}
+
+/* Modifica il logo: altezza massima e margine */
+.logo {
+  height: 50px; /* Altezza del logo */
+  margin-right: 10px; /* Spazio tra logo e menu */
+}
+/*
+!* Stile personalizzato per il bottone Accedi *!
+.btn-light-gray {
+  background-color: #d3d3d3; !* Grigio chiaro *!
+  color: black; !* Testo bianco *!
+  border: none; !* Rimuove il bordo *!
+}
+
+!* Cambia colore al passaggio del mouse *!
+.btn-light-gray:hover {
+  background-color: #c0c0c0; !* Grigio leggermente più scuro *!
+  color: black; !* Mantiene il testo bianco *!
+}*/
+
+.nav-item:hover {
+  background-color: #526492; /* Blu chiaro */
+  border-radius: 5px; /* Rende i bordi arrotondati */
+}
+/* aggiungi la sottolineatura al passaggio del mouse (testo) */
+.nav-link:hover {
+  text-decoration: underline; /* Aggiunge la sottolineatura */
+}
+
+/* per il footer*/
+.fab {
+  font-size: 30px; /* Puoi cambiare la dimensione  */
+}
+.fab:hover {
+  color: #526492; /* Colore che appare al passaggio del mouse sopra le icone dei social */
+}
+.search{
+
+  margin-bottom: 1.5rem !important;
+  margin-top: 1.5rem !important;
+}
+.filter{
+  width: 20px;
+  height: 20px;
+}
+.img-search{
+  width: 20px;
+  height: 20px;
+}
+.search-container {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.filter img, .img-search {
+  width: 20px;
+  height: 20px;
+}
+.filters {
+  display: none; /* I filtri sono inizialmente nascosti */
+  margin-top: 15px;
+}
+
+/*per il filtra di film*/
+.btn btn-primary{
+  background-color: #526492 !important;
+}
+/* Carousel styling - side by side layout */
+#carouselExampleCaptions {
+  margin: 0 -50px 2rem -50px; /* Compensate for body padding */
+}
+
+.carousel-inner {
+  height: 500px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+.carousel-item {
+  height: 500px;
+  display: flex !important;
+  padding: 40px 60px;
+  position: relative;
+}
+
+.carousel-item:not(.active) {
+  display: none !important;
+}
+
+.carousel-poster {
+  flex: 0 0 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.carousel-poster img {
+  max-height: 480px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-content {
+  flex: 0 0 40%;
+  padding-left: 30px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.carousel-content h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-content p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+  margin-bottom: 25px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.carousel-content .btn {
+  background-color: #526492;
+  color: white;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.carousel-content .btn:hover {
+  background-color: #3d4a6b;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(82, 100, 146, 0.4);
+}
+.carousel-description {
+  flex-grow: 1;
+  max-height: 150px;
+  overflow-y: auto;
+  margin-bottom: 1rem; /* distacco dal bottone */
+}
+.btn{
+  color: #526492;
+}
+
+h2{
+  padding: 15px;
+}
+
+/*per il form di registrazione*/
+.login-bg{
+  background: #051233; /*030d28*/
+  background: linear-gradient(180deg, #030d28 0%, #212529 100%);
+  height: 750px !important;
+}
+
+.login{
+  padding:20px;
+  background-color: #F5F5F5;
+  margin: 5%;
+  width: 25% !important;
+  border-radius: 10px;
+  height: 60%;
+}
+.myForm{
+  padding: 5%;
+}
+.centerText{
+  text-align: center;
+}
+
+/* Oscar Cards Styling */
+.oscar-category-card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.oscar-category-card:hover {
+  transform: translateY(-2px);
+}
+
+.winner-section {
+  margin-bottom: 1rem;
+}
+
+.winner-card {
+  padding: 1rem;
+  background-color: rgba(25, 135, 84, 0.1) !important;
+  border: 1px solid #198754 !important;
+  border-radius: 0.375rem;
+}
+
+.nominee-item {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  background-color: #f8f9fa;
+  border-radius: 0.375rem;
+}
+
+.nominees-section {
+  margin-top: 1rem;
+}
+
+.nominees-section .btn {
+  transition: all 0.3s ease;
+}
+
+.nominees-section .btn:hover {
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+}
+
+.oscar-search-form {
+  background-color: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.oscar-search-form .form-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.oscar-search-form .btn-primary {
+  background-color: #526492;
+  border-color: #526492;
+}
+
+.oscar-search-form .btn-primary:hover {
+  background-color: #3d4a6b;
+  border-color: #364158;
+}
+
+.oscar-container {
+  margin-top: 2rem;
+}
+
+/* Footer Logo Styling */
+.footer-logo {
+  max-width: 150px;
+}
+
+/* Movie Search Dropdown */
+.genre-dropdown-menu {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* Login Page Background Override */
+.login-bg-override {
+  background-color: black !important;
+  height: 500px;
+}
+
+/* Chatbox Styling */
+.chatbox-container {
+  border: 1px solid #d2d2d2;
+  height: 500px;
+}
+
+.chatbox-header {
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.chatbox-footer {
+  border-top: 1px solid #d2d2d2;
+}
+
+.profile-image {
+  width: 75%;
+  height: auto;
+}
+
+.chat-message-avatar {
+  width: 60%;
+  height: auto;
+  background-color: #f0f0f0;
+  border: 2px solid #e0e0e0;
+}
+
+/* Filters Toggle */
+.filters-hidden {
+  display: none;
+}
+
+.filters-visible {
+  display: block;
+}
+#messageInput {
+  width: 100%;
+  min-height: 50px;
+  max-height: 100px;
+  overflow-y: auto;
+  resize: none;
+}
+
+/* Smooth collapsible lists for actors/crew */
+.collapsible-list .collapse {
+  transition: all 0.3s ease;
+}
+
+.collapsible-list .btn-link {
+  color: #526492 !important;
+  font-size: 0.9rem;
+}
+
+.collapsible-list .btn-link:hover {
+  color: #3d4a6b !important;
+  text-decoration: none !important;
+}
+
+.collapsible-list .btn-link i {
+  transition: transform 0.3s ease;
+}
+
+.collapsible-list .mb-1 {
+  line-height: 1.6;
+}
