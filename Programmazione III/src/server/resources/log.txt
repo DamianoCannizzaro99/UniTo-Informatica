@@ -1,0 +1,4 @@
+| 08/02/2026, 14:47:55.664 | address: 192.168.1.115 | port: 7430 | Server activation completed! Listening on address: 192.168.1.115 on port:7430 for new connection...
+| 08/02/2026, 14:48:00.775 | address: 192.168.1.115 | port: 7430 | New user client connected! ->
+| 08/02/2026, 14:48:04.383 | address: 192.168.1.115 | port: 7430 | User disconnected: giannibianco@gmail.com
+| 08/02/2026, 14:48:07.164 | address: 192.168.1.115 | port: 7430 | Server disconnected!

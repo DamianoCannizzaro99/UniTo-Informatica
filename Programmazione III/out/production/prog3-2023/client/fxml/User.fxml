@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="171.0" prefWidth="701.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="client.controller.UserController">
+   <children>
+      <ListView layoutX="-5.0" prefHeight="186.0" prefWidth="723.0" />
+      <Button fx:id="logOutBtn" layoutX="593.0" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#onLogoutButtonClick" prefHeight="35.0" prefWidth="91.0" text="Log Out" />
+      <Label layoutX="252.0" layoutY="22.0" prefHeight="53.0" prefWidth="69.0" text="Username:" />
+      <Button fx:id="writeBtn" layoutX="593.0" layoutY="75.0" mnemonicParsing="false" onMouseClicked="#onWriteButtonClick" prefHeight="35.0" prefWidth="91.0" text="Scrivi email" />
+      <Label fx:id="usernameLabel" layoutX="359.0" layoutY="22.0" prefHeight="54.0" prefWidth="135.0" text="Username utente" />
+      <Label layoutX="252.0" layoutY="70.0" prefHeight="45.0" prefWidth="61.0" text="E-mail:" />
+      <Label fx:id="emailLabel" layoutX="359.0" layoutY="69.0" prefHeight="46.0" prefWidth="157.0" text="email utente" />
+      <ImageView fx:id="imageLabel" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>
