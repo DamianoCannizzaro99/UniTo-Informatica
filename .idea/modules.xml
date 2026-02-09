@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/Progetto tecnologie Web.iml" filepath="$PROJECT_DIR$/.idea/Progetto tecnologie Web.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/Esercizi LFT/Esercizi LFT.iml" filepath="$PROJECT_DIR$/Esercizi LFT/Esercizi LFT.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Progetto LFT.iml" filepath="$PROJECT_DIR$/Progetto LFT.iml" />
+>>>>>>> 1fc720820be1b4106a34439d8808b49dd0d3c0d9
     </modules>
   </component>
 </project>

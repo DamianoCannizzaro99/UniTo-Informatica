@@ -2,6 +2,10 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+<<<<<<< HEAD
     <mapping directory="$PROJECT_DIR$/progetto-tweb" vcs="Git" />
+=======
+    <mapping directory="$PROJECT_DIR$/Esercizi LFT" vcs="Git" />
+>>>>>>> 1fc720820be1b4106a34439d8808b49dd0d3c0d9
   </component>
 </project>
