@@ -1,2 +1,0 @@
-Damiano Cannizzaro
-Fabio Carturan

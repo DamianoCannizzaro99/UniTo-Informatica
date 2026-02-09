@@ -1,3 +1,0 @@
-assign 2 to x;
-while (>= x 0)
-read [a,x,z]
